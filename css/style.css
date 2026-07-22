@@ -334,10 +334,11 @@ img { max-width: 100%; height: auto; display: block; }
 .access__info { flex: 1; }
 .access__logo {
     max-width: 180px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     mix-blend-mode: multiply;
 }
 .access__logo img { width: 100%; height: auto; }
+.access__store-name { font-size: 1.1rem; font-weight: 500; color: var(--color-text-main); margin-bottom: 25px; letter-spacing: 0.05em; }
 
 .access__table { width: 100%; border-collapse: collapse; }
 .access__table th, .access__table td {
