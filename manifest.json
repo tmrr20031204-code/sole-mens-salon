@@ -1,0 +1,22 @@
+{
+  "name": "Men's Salon SOLE.",
+  "short_name": "SOLE.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FCFAF8",
+  "theme_color": "#FCFAF8",
+  "icons": [
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
