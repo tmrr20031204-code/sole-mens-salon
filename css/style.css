@@ -333,16 +333,16 @@ img { max-width: 100%; height: auto; display: block; }
 .access__map { flex: 1; min-height: 350px; border-radius: 12px; overflow: hidden; }
 
 /* --- Floating CTA (Mobile) --- */
-.floating-cta { position: fixed; bottom: 20px; left: 15px; right: 15px; z-index: 998; display: flex; gap: 10px; }
+.floating-cta { position: fixed; bottom: 15px; left: 10px; right: 10px; z-index: 998; display: flex; gap: 6px; }
 .floating-cta__btn {
     flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 10px 0; border-radius: 30px;
+    padding: 8px 0; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-.floating-cta__btn--tel { background-color: var(--color-bg-card); color: var(--color-text-main); border-top: 1px solid #eee; }
+.floating-cta__btn--tel { background-color: var(--color-bg-card); color: var(--color-text-main); border: 1px solid #eaeaea; }
 .floating-cta__btn--line { background-color: #06C755; color: #fff; }
 .floating-cta__btn--insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #fff; }
-.floating-cta__en { display: block; font-family: var(--font-en); font-size: 0.65rem; letter-spacing: 0.1em; opacity: 0.9; margin-bottom: 2px; }
-.floating-cta__text { font-size: 1.1rem; font-weight: 500; letter-spacing: 0.05em; }
+.floating-cta__en { display: block; font-family: var(--font-en); font-size: 0.6rem; letter-spacing: 0.05em; opacity: 0.9; margin-bottom: 2px; }
+.floating-cta__text { font-size: 0.95rem; font-weight: 500; letter-spacing: 0; white-space: nowrap; }
 
 /* --- Footer --- */
 .footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: var(--color-text-muted); padding-bottom: 100px; }
