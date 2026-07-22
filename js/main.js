@@ -43,3 +43,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// --- Share Functions ---
+function shareCopy() {
+    const shareUrl = window.location.href;
+    navigator.clipboard.writeText(shareUrl).then(() => {
+        alert('URLをコピーしました！');
+    }).catch(err => {
+        // Fallback for older browsers
+        const textArea = document.createElement("textarea");
+        textArea.value = shareUrl;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            alert('URLをコピーしました！');
+        } catch (err) {
+            alert('コピーに失敗しました。');
+        }
+        document.body.removeChild(textArea);
+    });
+}
+
+function shareLine() {
+    window.open('https://line.me/R/msg/text/?' + encodeURIComponent(window.location.href), '_blank');
+}
+
+function shareSms() {
+    const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const separator = isIos ? '&' : '?';
+    window.open('sms:' + separator + 'body=' + encodeURIComponent('Men\'s Salon SOLE のサイトはこちら\n' + window.location.href), '_self');
+}
