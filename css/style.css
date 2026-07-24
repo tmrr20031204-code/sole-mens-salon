@@ -380,6 +380,7 @@ img { max-width: 100%; height: auto; display: block; }
 .footer__dev-link { display: inline-flex; align-items: center; justify-content: center; color: var(--color-accent-wood); font-size: 1.1rem; font-weight: 500; text-decoration: none; transition: opacity 0.3s ease; }
 .footer__dev-link:hover { opacity: 0.7; }
 .footer__dev-icon { width: 24px; height: 24px; border-radius: 6px; margin-right: 8px; object-fit: contain; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.footer__dev-note { font-size: 0.8rem; opacity: 0.7; margin-top: 5px; }
 .footer__credit { margin-top: 30px; font-size: 0.7rem; opacity: 0.7; letter-spacing: 0.05em; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px; }
 
 /* --- Utilities & Animations --- */
