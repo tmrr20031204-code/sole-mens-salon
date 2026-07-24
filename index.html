@@ -20,14 +20,14 @@
     
     <style>
         /* QR Code Modal (Inline to prevent cache issues) */
-        .qr-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-        .qr-modal.is-show { opacity: 1; pointer-events: auto; }
-        .qr-modal__inner { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; position: relative; max-width: 90%; width: 320px; transform: scale(0.95); transition: transform 0.3s ease; }
-        .qr-modal.is-show .qr-modal__inner { transform: scale(1); }
-        .qr-modal__close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; color: #999; cursor: pointer; line-height: 1; padding: 5px; }
-        .qr-modal__title { font-family: var(--font-en); font-size: 1.2rem; color: var(--color-text-main); margin-bottom: 20px; font-weight: 500; }
-        .qr-modal__img { width: 200px; height: 200px; margin: 0 auto 20px; border: 1px solid #eee; padding: 10px; border-radius: 10px; display: block; }
-        .qr-modal__desc { font-size: 0.8rem; color: var(--color-text-muted); }
+        .share-qr-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .share-qr-modal.is-show { opacity: 1; pointer-events: auto; }
+        .share-qr-modal__inner { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; position: relative; max-width: 90%; width: 320px; transform: scale(0.95); transition: transform 0.3s ease; }
+        .share-qr-modal.is-show .share-qr-modal__inner { transform: scale(1); }
+        .share-qr-modal__close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; color: #999; cursor: pointer; line-height: 1; padding: 5px; }
+        .share-qr-modal__title { font-family: var(--font-en); font-size: 1.2rem; color: var(--color-text-main); margin-bottom: 20px; font-weight: 500; }
+        .share-qr-modal__img { width: 200px; height: 200px; margin: 0 auto 20px; border: 1px solid #eee; padding: 10px; border-radius: 10px; display: block; }
+        .share-qr-modal__desc { font-size: 0.8rem; color: var(--color-text-muted); }
     </style>
 </head>
 <body>
@@ -277,12 +277,12 @@
     </div> <!-- /main-wrapper -->
 
     <!-- QR Code Modal -->
-    <div id="qrModal" class="qr-modal" onclick="closeQrCode()">
-        <div class="qr-modal__inner" onclick="event.stopPropagation()">
-            <button class="qr-modal__close" onclick="closeQrCode()">×</button>
-            <p class="qr-modal__title">サイトのQRコード</p>
-            <img id="qrImage" src="" alt="QR Code" class="qr-modal__img">
-            <p class="qr-modal__desc">この画面を読み取ってアクセスできます</p>
+    <div id="qrModal" class="share-qr-modal" onclick="closeQrCode()">
+        <div class="share-qr-modal__inner" onclick="event.stopPropagation()">
+            <button class="share-qr-modal__close" onclick="closeQrCode()">×</button>
+            <p class="share-qr-modal__title">サイトのQRコード</p>
+            <img id="qrImage" src="" alt="QR Code" class="share-qr-modal__img">
+            <p class="share-qr-modal__desc">この画面を読み取ってアクセスできます</p>
         </div>
     </div>
 
