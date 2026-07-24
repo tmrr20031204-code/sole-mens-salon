@@ -205,20 +205,36 @@ img { max-width: 100%; height: auto; display: block; }
 .mobile-menu__share { margin-top: 40px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; }
 .mobile-menu__share-title { font-family: var(--font-en); color: var(--color-accent-wood); margin-bottom: 15px; font-size: 1.1rem; }
 .mobile-menu__share-buttons { display: flex; flex-direction: column; gap: 10px; align-items: center; }
-.share-btn { 
-    display: flex; align-items: center; justify-content: center; gap: 10px;
+.share-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
     width: 80%; padding: 12px 0; border-radius: 30px; border: none; font-size: 0.95rem; font-weight: 500;
-    cursor: pointer; transition: var(--transition);
+    cursor: pointer; transition: all 0.3s ease;
 }
 .share-btn svg { width: 18px; height: 18px; }
-.share-btn--copy { background-color: #f5f5f5; color: var(--color-text-main); }
+.share-btn--copy { background-color: #f0f0f0; color: #333; }
 .share-btn--copy:hover { background-color: #e0e0e0; }
-.share-btn--line { background-color: #06C755; color: #fff; }
-.share-btn--line:hover { opacity: 0.9; }
-.share-btn--sms { background-color: #007AFF; color: #fff; }
-.share-btn--sms:hover { opacity: 0.9; }
+.share-btn--line { background-color: #06C755; color: white; }
+.share-btn--line:hover { background-color: #05B34C; }
+.share-btn--sms { background-color: #007AFF; color: white; }
+.share-btn--sms:hover { background-color: #0066D6; }
+.share-btn--qr { background-color: #333; color: white; }
+.share-btn--qr:hover { background-color: #000; }
 
-/* --- Hero Section --- */
+.mobile-menu__add-home-wrap { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.mobile-menu__add-home { background: none; border: 1px solid var(--color-accent-wood); color: var(--color-accent-wood); padding: 10px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.3s; }
+.mobile-menu__add-home:hover { background-color: var(--color-accent-wood); color: white; }
+
+/* QR Code Modal */
+.qr-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.qr-modal:not(.hidden) { opacity: 1; pointer-events: auto; }
+.qr-modal__inner { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; position: relative; max-width: 90%; width: 320px; transform: scale(0.95); transition: transform 0.3s ease; }
+.qr-modal:not(.hidden) .qr-modal__inner { transform: scale(1); }
+.qr-modal__close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; color: #999; cursor: pointer; line-height: 1; padding: 5px; }
+.qr-modal__title { font-family: var(--font-en); font-size: 1.2rem; color: var(--color-text-main); margin-bottom: 20px; font-weight: 500; }
+.qr-modal__img { width: 200px; height: 200px; margin: 0 auto 20px; border: 1px solid #eee; padding: 10px; border-radius: 10px; }
+.qr-modal__desc { font-size: 0.8rem; color: var(--color-text-muted); }
+
+/* --- Layout --- */
 .hero {
     position: relative; height: 100vh; min-height: 600px;
     display: flex; align-items: center; justify-content: center;

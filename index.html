@@ -40,6 +40,12 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <div class="mobile-menu__inner">
+                <div class="mobile-menu__add-home-wrap">
+                    <button class="mobile-menu__add-home" onclick="installPWA()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align: middle; margin-right: 5px; margin-top: -2px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M12 8v8M8 12h8"></path></svg>
+                        【ホーム画面に追加する】
+                    </button>
+                </div>
                 <ul>
                     <li><a href="#concept">Concept</a></li>
                     <li><a href="#style">Style</a></li>
@@ -69,6 +75,10 @@
                         <button class="share-btn share-btn--sms" onclick="shareSms()">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                             SMSで送る
+                        </button>
+                        <button class="share-btn share-btn--qr" onclick="showQrCode()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                            QRコードを表示
                         </button>
                     </div>
                 </div>
@@ -254,7 +264,17 @@
     </footer>
     </div> <!-- /main-wrapper -->
 
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="qr-modal hidden" onclick="closeQrCode()">
+        <div class="qr-modal__inner" onclick="event.stopPropagation()">
+            <button class="qr-modal__close" onclick="closeQrCode()">×</button>
+            <p class="qr-modal__title">サイトのQRコード</p>
+            <img id="qrImage" src="" alt="QR Code" class="qr-modal__img">
+            <p class="qr-modal__desc">この画面を読み取ってアクセスできます</p>
+        </div>
+    </div>
+
     <!-- JavaScript -->
-    <script src="js/main.js?v=2.0"></script>
+    <script src="js/main.js?v=2.1"></script>
 </body>
 </html>

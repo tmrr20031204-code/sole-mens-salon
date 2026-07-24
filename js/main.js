@@ -74,3 +74,42 @@ function shareSms() {
     const separator = isIos ? '&' : '?';
     window.open('sms:' + separator + 'body=' + encodeURIComponent('Men\'s Salon SOLE のサイトはこちら\n' + window.location.href), '_self');
 }
+
+// --- QR Code ---
+function showQrCode() {
+    const qrModal = document.getElementById('qrModal');
+    const qrImage = document.getElementById('qrImage');
+    const currentUrl = encodeURIComponent(window.location.href);
+    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${currentUrl}`;
+    qrModal.classList.remove('hidden');
+}
+
+function closeQrCode() {
+    document.getElementById('qrModal').classList.add('hidden');
+}
+
+// --- PWA Install ---
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+});
+
+function installPWA() {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
+    } else {
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIos) {
+            alert('iPhoneの場合は、画面下部の「共有（四角から矢印が飛び出したマーク）」ボタンから「ホーム画面に追加」を選択してください。');
+        } else {
+            alert('すでにホーム画面に追加されているか、ブラウザのメニューから「ホーム画面に追加」を選択してください。');
+        }
+    }
+}
