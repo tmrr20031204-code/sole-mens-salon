@@ -81,11 +81,11 @@ function showQrCode() {
     const qrImage = document.getElementById('qrImage');
     const currentUrl = encodeURIComponent(window.location.href);
     qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${currentUrl}`;
-    qrModal.classList.remove('hidden');
+    qrModal.classList.add('is-show');
 }
 
 function closeQrCode() {
-    document.getElementById('qrModal').classList.add('hidden');
+    document.getElementById('qrModal').classList.remove('is-show');
 }
 
 // --- PWA Install ---
