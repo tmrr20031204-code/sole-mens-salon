@@ -7,8 +7,8 @@ echo Uploading to GitHub...
 echo.
 
 git add .
-git commit -m "Auto update from upload.bat"
-git push -f origin main
+git commit -m "Auto update from 本番更新.bat"
+git push origin main
 
 echo.
 echo ==============================================
